@@ -11,16 +11,41 @@
 
 <h2>work stack</h2>
 <ul>
-    <li>get multiple users working on screen (only one other player working)</li>
-    <li>fix physics revert bug, need to revert everyone except for yourself too?</li>
+    <li>cigarette drains health and gives back skill time</li>
+    <li>networked with rollback only works if the ids of the created characters is the same</li>
+    <li>slowly fix all animations by baking them with with the baked postfix action, then fix rigged model loading for that, use mwe_3d_animation as a testbed</li>
+    <li>add ambient sound</li>
+    <li>integrate announcer</li>
+    <li>create shotgun logic</li>
+    <li>create knife logic</li>
+    <li>create grenade launcher</li>
+    <li>work towards shotgun to make this happen</li>
+    <li>why doesn't rocket actually launch us into air? cause stuck on ground?</li>
+    <li>rocket launcher animation</li>
+    <li>shotgun firing animation, requires scripted events to work.</li>
+    <li>get scripted events to work, in order to work it requires a particle emitter manager class, a sound effect one</li>
+    <li>fix physics revert bug, need to revert everyone except for yourself because the game state after processing your fire kmu is where you are currently situated, whereas the others need to go back (I think this is fixed now, but need to check) </li>
     <li>add rocket launcher</li>
     <li>add shotgun</li>
+    <li>don't use rate limiter for switching use delay thing?</li>
+    <li>player disconnection</li>
     <li>add skills relating to the above weapons</li>
+    <li>integrate id generation into particle emitter, first bilboard replacementthen next steup</li>
+    <li>ata is complete function, ata manager, creation processing deletion</li>
     <li>fix skill ring</li>
     <li>figure out occasional segfault.</li>
     <li>new maps</li>
     <li>viewmodel weapons</li>
-    <li>animations</li>
+    <li>multiple animations, be able to load in different animations and also check when an animation is done</li>
+    <li>rocket launcher animation</li>
+    <li>add knife</li>
+    <li>add knife logic</li>
+    <li>more than 1024 ubos test on various computer graphics cards, want at least 4k support all computers</li>
+    <li>batcher instancing when you upload a "" square circle etc...</li>
+    <li>deferred lighting</li>
+    <li>frustrum culling easy one keep down percentage</li>
+    <li>subtick mouse updates and then batching (watch out for zoom sens change)</li>
+    <li>test multiple users (not required until after level up)</li>
 </ul>
 
 
