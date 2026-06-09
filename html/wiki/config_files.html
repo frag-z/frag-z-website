@@ -1,0 +1,81 @@
+<h1>
+    <div class="fire-text big-text">Config Files</div>
+</h1>
+
+<h2>Server Config</h2>
+<p>
+    The server reads <code>data/server.ini</code> under the <code>[server]</code> section.
+</p>
+
+<table style="width:100%">
+    <tr>
+        <th>Key</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Valid Values</th>
+    </tr>
+    <tr>
+        <td><code>name</code></td>
+        <td>string</td>
+        <td>Server name shown in the directory.</td>
+        <td>Any text.</td>
+    </tr>
+    <tr>
+        <td><code>location</code></td>
+        <td>string</td>
+        <td>Human-readable server location.</td>
+        <td>Any text.</td>
+    </tr>
+    <tr>
+        <td><code>max_players</code></td>
+        <td>integer</td>
+        <td>Maximum number of players allowed on the server.</td>
+        <td>Clamped from <code>1</code> to <code>8</code>.</td>
+    </tr>
+    <tr>
+        <td><code>public_ip_address</code></td>
+        <td>string</td>
+        <td>Advertised public address when <code>lan</code> is false.</td>
+        <td>Any valid public IP address or hostname.</td>
+    </tr>
+    <tr>
+        <td><code>lan</code></td>
+        <td>bool</td>
+        <td>Controls whether the server is treated as a LAN server.</td>
+        <td><code>true</code> or <code>false</code>.</td>
+    </tr>
+    <tr>
+        <td><code>password</code></td>
+        <td>string</td>
+        <td>Password required to join the server.</td>
+        <td>Any text. May be blank.</td>
+    </tr>
+    <tr>
+        <td><code>game_mode</code></td>
+        <td>string</td>
+        <td>Game mode the server will run.</td>
+        <td><code>KING_OF_THE_HILL</code>, <code>CAPTURE_THE_FLAG</code>, <code>LAST_ONE_STANDING</code>, or <code>TIMED_FREE_FOR_ALL</code>.</td>
+    </tr>
+</table>
+
+<h2>Client Config</h2>
+<p>
+    The client initializes <code>data/cfg.ini</code>.
+</p>
+
+<table style="width:100%">
+    <tr>
+        <th>Section</th>
+        <th>Key</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Valid Values</th>
+    </tr>
+    <tr>
+        <td><code>[input]</code></td>
+        <td><code>sensitivity</code></td>
+        <td>float</td>
+        <td>Mouse look sensitivity.</td>
+        <td>Any positive number.</td>
+    </tr>
+</table>

@@ -10,7 +10,7 @@ def frag_z_template_conversion(path_to_content_file: str, file_name: str, templa
         template_lines = f.readlines()
 
     file_name = os.path.splitext(os.path.basename(file_name))[0]
-    page_title = file_name.replace('_', ' ')
+    page_title = file_name.replace('_', ' ').title()
 
     title_line_index = next(i for i, s in enumerate(template_lines) if "<title>PAGE TITLE</title>" in s)
     template_lines[title_line_index] = template_lines[title_line_index].replace("PAGE TITLE", page_title)

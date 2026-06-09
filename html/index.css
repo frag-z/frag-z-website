@@ -32,7 +32,7 @@ table, th, td {
 .top_bar ul {
     display: flex;
     justify-content: space-around;
-    width: 30%;
+    width: 45%;
 }
 
 .top_bar ul li {
@@ -83,6 +83,29 @@ table, th, td {
 /* visited link */
 .wrapper a:visited {
     color: yellow;
+}
+
+.notice {
+    border: 2px solid yellow;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.wiki-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.wiki-card {
+    border: 2px solid yellow;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+code {
+    background: rgba(0, 0, 0, 0.45);
+    padding: 0.1rem 0.25rem;
 }
 
 

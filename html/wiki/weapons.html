@@ -1,0 +1,60 @@
+<h1>
+    <div class="fire-text big-text">Weapons</div>
+</h1>
+
+<table style="width:100%">
+    <tr>
+        <th>weapon</th>
+        <th>type</th>
+        <th>fire rate</th>
+        <th>range or speed</th>
+        <th>damage</th>
+    </tr>
+    <tr>
+        <td>rocket launcher</td>
+        <td>projectile</td>
+        <td>1.28 Hz</td>
+        <td>40 m/s projectile, 4 second lifetime, 10 m explosion radius</td>
+        <td>Up to 50 explosion damage with linear falloff. Explosion force is 20.</td>
+    </tr>
+    <tr>
+        <td>grenade launcher</td>
+        <td>projectile</td>
+        <td>uses projectile firing path</td>
+        <td>30 m/s projectile with gravity <code>{0, -24, 0}</code>, 4 second lifetime</td>
+        <td>Uses the same explosion damage path as rockets.</td>
+    </tr>
+    <tr>
+        <td>shotgun</td>
+        <td>hitscan</td>
+        <td>1.0 Hz</td>
+        <td>30 m range, 16 pellets across inner and outer spread rings</td>
+        <td>75 total full damage, divided across pellets.</td>
+    </tr>
+    <tr>
+        <td>sniper rifle</td>
+        <td>hitscan</td>
+        <td>0.8 Hz</td>
+        <td>200 m range</td>
+        <td>50 base damage. Headshots use a 1.5x multiplier.</td>
+    </tr>
+    <tr>
+        <td>lightning gun</td>
+        <td>hitscan</td>
+        <td>10 Hz</td>
+        <td>12 m range</td>
+        <td>10 damage per hit.</td>
+    </tr>
+    <tr>
+        <td>knife</td>
+        <td>hitscan melee</td>
+        <td>1.25 Hz</td>
+        <td>3 m range</td>
+        <td>35 normal damage, 75 while rocket jumping, 100 on backstab.</td>
+    </tr>
+</table>
+
+<h2>Weapon Switching</h2>
+<p>
+    Weapon changes are queued while a fire cooldown is active, then applied when the cooldown clears.
+</p>

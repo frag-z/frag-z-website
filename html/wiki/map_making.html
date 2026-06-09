@@ -1,0 +1,76 @@
+<h1>
+    <div class="fire-text big-text">Map Making</div>
+</h1>
+
+<p>
+    Frag-Z maps are designed gameplay first. Maps should be designed around movement and how you want players to interact.
+</p>
+
+<p>
+    Maps should not rely on intricate indoor geometry. Tight rooms, tiny decorative corners, and highly detailed interior clutter usually fight the movement system and make combat worse. 
+</p>
+
+<h2>Get Off The Ground Fast</h2>
+<p>
+    You do not need to be a texture artist to make a valid map. Frag-Z supports raw <code>.obj</code> files as maps, so a simple untextured blockout should be the first phase of any map's development. Once it's been tested and you know it's right, then start adding textures.
+</p>
+
+<p>
+    If you've confirmed a map plays well and you want to start adding an aesthetic to your map, we support using PBR materials. We support these materials through <code>.gltf</code> files and we utilize albedo, normal, metallic, and roughness textures. Right now the only supported map/model formats are <code>.obj</code> and <code>.gltf</code>.
+</p>
+
+<h2>Software</h2>
+<p>
+    You can use any 3D software to create Frag-Z maps as long as you can export to <code>.obj</code> or <code>.gltf</code>. If you have not used 3D modeling software before, Blender is recommended because it is free, widely used, and exports both formats.
+</p>
+
+<h2>Valid Maps</h2>
+<p>
+    Every map needs a model file: either <code>.obj</code> or <code>.gltf</code>. Any ordinary mesh object becomes static collision. Maps may also include trigger objects named as Jai-style struct literals:
+    <code>Jump_Pad.{velocity = ...}</code>,
+    <code>Teleporter.{pair_id = "...", outward_vector = ...}</code>,
+    <code>King_Of_The_Hill_Point.{}</code>,
+    <code>Capture_The_Flag_Team_A_Flag_Zone.{}</code>, and
+    <code>Capture_The_Flag_Team_B_Flag_Zone.{}</code>.
+</p>
+
+<table style="width:100%">
+    <tr>
+        <th>Game Mode</th>
+        <th>Valid Map Requirements</th>
+    </tr>
+    <tr>
+        <td>Timed Free For All</td>
+        <td>Map model plus <code>spawns.txt</code> with at least one <code>Spawn</code>.</td>
+    </tr>
+    <tr>
+        <td>Last One Standing</td>
+        <td>Map model plus <code>spawns.txt</code> with at least one <code>Spawn</code>.</td>
+    </tr>
+    <tr>
+        <td>King Of The Hill</td>
+        <td>Map model plus <code>team_a_spawns.txt</code>, <code>team_b_spawns.txt</code>, and exactly one <code>King_Of_The_Hill_Point.{}</code> trigger.</td>
+    </tr>
+    <tr>
+        <td>Capture The Flag</td>
+        <td>Map model plus <code>team_a_spawns.txt</code>, <code>team_b_spawns.txt</code>, exactly one <code>Capture_The_Flag_Team_A_Flag_Zone.{}</code> trigger, and exactly one <code>Capture_The_Flag_Team_B_Flag_Zone.{}</code> trigger. Each flag zone should be authored as a quad with four unique points.</td>
+    </tr>
+</table>
+
+<h2>Spawn Files</h2>
+<p>
+    Spawn files are parsed as arrays of <code>Spawn</code> values. Each spawn has a <code>position</code>, <code>yaw</code>, and <code>pitch</code>. Spawn angles are measured in turns: <code>1.0</code> is one full rotation, <code>0.5</code> is half a rotation, and <code>0.25</code> is a quarter rotation. Free-for-all style modes use <code>spawns.txt</code>; team modes use <code>team_a_spawns.txt</code> and <code>team_b_spawns.txt</code>.
+</p>
+
+<h2>Skyboxes</h2>
+<p>
+    glTF/PBR maps can also include a skybox image in the same folder as the map. Name it <code>skybox.png</code>, <code>skybox.jpg</code>, <code>skybox.jpeg</code>, or <code>skybox.tga</code>. The renderer uses that image as a cubemap/reflection source when loading the map.
+</p>
+
+<h2>What To Prioritize</h2>
+<ul>
+    <li>Design from player flow before visual detail.</li>
+    <li>Use clean, readable geometry that works at high movement speed.</li>
+    <li>Prefer strong routes, loops, ramps, ledges, and sightlines over decorative density.</li>
+    <li>Test simple shapes early. A good raw OBJ layout is more valuable than a beautiful map that does not play well.</li>
+</ul>
