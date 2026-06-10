@@ -60,7 +60,7 @@
 
 <h2>Client Config</h2>
 <p>
-    The client initializes <code>data/cfg.ini</code>.
+    The client initializes <code>data/cfg.ini</code>. These are the keys currently read by the client.
 </p>
 
 <table style="width:100%">
@@ -72,10 +72,178 @@
         <th>Valid Values</th>
     </tr>
     <tr>
+        <td><code>[audio]</code></td>
+        <td><code>volume</code></td>
+        <td>float</td>
+        <td>General sound effect and UI volume percentage.</td>
+        <td>The in-game slider uses <code>0</code> to <code>100</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[graphics]</code></td>
+        <td><code>resolution</code></td>
+        <td>integer</td>
+        <td>Index into the detected resolution list.</td>
+        <td><code>0</code> through the last detected resolution index. If no display modes are detected, fallback options are <code>1920x1080</code>, <code>1280x720</code>, and <code>640x480</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[graphics]</code></td>
+        <td><code>fullscreen</code></td>
+        <td>bool</td>
+        <td>Controls whether the client runs fullscreen.</td>
+        <td><code>true</code> or <code>false</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[graphics]</code></td>
+        <td><code>vsync</code></td>
+        <td>bool</td>
+        <td>Controls vertical sync.</td>
+        <td><code>true</code> or <code>false</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[graphics]</code></td>
+        <td><code>max_fps</code></td>
+        <td>integer</td>
+        <td>Frame-rate cap.</td>
+        <td><code>30</code> to <code>512</code>.</td>
+    </tr>
+    <tr>
         <td><code>[input]</code></td>
         <td><code>sensitivity</code></td>
         <td>float</td>
         <td>Mouse look sensitivity.</td>
-        <td>Any positive number.</td>
+        <td>The in-game slider uses <code>0.01</code> to <code>10.0</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[input]</code></td>
+        <td><code>forward</code></td>
+        <td>string</td>
+        <td>Move forward key.</td>
+        <td>A single character. Default: <code>W</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[input]</code></td>
+        <td><code>backward</code></td>
+        <td>string</td>
+        <td>Move backward key.</td>
+        <td>A single character. Default: <code>S</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[input]</code></td>
+        <td><code>right</code></td>
+        <td>string</td>
+        <td>Move right key.</td>
+        <td>A single character. Default: <code>D</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[input]</code></td>
+        <td><code>left</code></td>
+        <td>string</td>
+        <td>Move left key.</td>
+        <td>A single character. Default: <code>A</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[input]</code></td>
+        <td><code>select_rocket_launcher</code></td>
+        <td>string</td>
+        <td>Select rocket launcher key.</td>
+        <td>A single character. Default: <code>1</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[input]</code></td>
+        <td><code>select_lightning_gun</code></td>
+        <td>string</td>
+        <td>Select lightning gun key.</td>
+        <td>A single character. Default: <code>2</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[input]</code></td>
+        <td><code>select_sniper_rifle</code></td>
+        <td>string</td>
+        <td>Select sniper rifle key.</td>
+        <td>A single character. Default: <code>3</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[input]</code></td>
+        <td><code>select_shotgun</code></td>
+        <td>string</td>
+        <td>Select shotgun key.</td>
+        <td>A single character. Default: <code>4</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[input]</code></td>
+        <td><code>select_knife</code></td>
+        <td>string</td>
+        <td>Select knife key.</td>
+        <td>A single character. Default: <code>5</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[input]</code></td>
+        <td><code>select_grenade_launcher</code></td>
+        <td>string</td>
+        <td>Select grenade launcher key.</td>
+        <td>A single character. Default: <code>6</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[input]</code></td>
+        <td><code>toggle_chat</code></td>
+        <td>string</td>
+        <td>Open or close chat.</td>
+        <td>A single character. Default: <code>T</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[network]</code></td>
+        <td><code>lan</code></td>
+        <td>bool</td>
+        <td>Controls whether the client uses the LAN directory server address.</td>
+        <td><code>true</code> or <code>false</code>.</td>
+    </tr>
+    <tr>
+        <td><code>[user]</code></td>
+        <td><code>username</code></td>
+        <td>string</td>
+        <td>Displayed username.</td>
+        <td>Any text up to 255 characters.</td>
+    </tr>
+    <tr>
+        <td><code>[user]</code></td>
+        <td><code>initials</code></td>
+        <td>string</td>
+        <td>Short displayed initials.</td>
+        <td>Any text up to 3 characters.</td>
     </tr>
 </table>
+
+<h3>Sample <code>cfg.ini</code></h3>
+<pre><code>[audio]
+volume = 50
+
+[graphics]
+resolution = 0
+fullscreen = false
+vsync = false
+max_fps = 144
+
+[input]
+sensitivity = 2.1
+
+forward = w
+backward = s
+right = d
+left = a
+
+select_rocket_launcher = 1
+select_lightning_gun = 2
+select_sniper_rifle = 3
+select_shotgun = 4
+select_knife = 5
+select_grenade_launcher = 6
+
+toggle_chat = t
+
+[network]
+lan = false
+
+[user]
+username = player
+initials = plr
+</code></pre>
